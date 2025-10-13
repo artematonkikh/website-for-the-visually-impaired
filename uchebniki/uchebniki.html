@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Учебники — Сайт для слабовидящих</title>
+
+  <!-- ВАЖНО: относительный путь к стилям для Pages -->
+  <link rel="stylesheet" href="../assets/styles.css"/>
+
+  <meta name="description" content="Сайт для слабовидящих школьников: крупный текст, высокая контрастность, озвучка, голосовой поиск и интерактивные задания. Разделы: Главная и Учебники.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <header class="header" role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="row" aria-label="Навигация">
+        <span class="brand">Сайт для слабовидящих</span>
+        <nav aria-label="Основная навигация" class="row">
+          <!-- ВАЖНО: относительные ссылки -->
+          <a class="btn secondary" href="../main/main.html">Главная</a>
+          <a class="btn secondary" aria-current="page" href="../uchebniki/uchebniki.html">Учебники</a>
+        </nav>
+      </div>
+      <div class="controls" aria-label="Контролы доступности">
+        <button id="fs-minus" class="secondary" aria-label="Уменьшить шрифт">A−</button>
+        <button id="fs-plus" class>А+</button>
+        <button id="fs-reset" class="secondary" aria-label="Сбросить настройки">Сброс</button>
+        <button id="lh-minus" class="secondary" aria-label="Меньше интерлиньяж">↓lh</button>
+        <button id="lh-plus" class="secondary" aria-label="Больше интерлиньяж">↑lh</button>
+        <button id="ls-minus" class="secondary" aria-label="Меньше межбуквенный">↓ls</button>
+        <button id="ls-plus" class="secondary" aria-label="Больше межбуквенный">↑ls</button>
+        <button id="theme-light" class="secondary">Светлая</button>
+        <button id="theme-dark" class="secondary">Тёмная</button>
+        <button id="theme-hc" class="secondary">Контраст</button>
+        <button id="font-inter" class="secondary">Inter</button>
+        <button id="font-noto" class="secondary">Noto Serif</button>
+        <button id="tts" class>🔊 Озвучить</button>
+        <button id="tts-stop" class="secondary">⏹︎</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="container" tabindex="-1">
+    <section class="card" aria-label="Поиск по учебникам">
+      <label for="search"><strong>Найти учебник</strong></label>
+      <input id="search" type="search" placeholder="например: Алгебра 10, история, биология…" aria-describedby="search-help" />
+      <p id="search-help" class="small">Результатов: <span id="results-count">0</span>. Введите часть названия, автора или класса.</p>
+    </section>
+
+    <section class="card" aria-label="Список учебников">
+      <h1>Учебники</h1>
+      <ul id="docs" class="list">
+        <!-- Примеры ссылок; замените на реальные пути/Google Docs/PDF -->
+        <li>
+          <a href="https://example.com/docs/algebra10.pdf" target="_blank" rel="noopener">Алгебра, 10 класс — Учебник</a>
+          <div class="small">Авторы: Иванов, Петров • Формат: PDF</div>
+        </li>
+        <li>
+          <a href="https://example.com/docs/geometry10.pdf" target="_blank" rel="noopener">Геометрия, 10 класс — Учебник</a>
+          <div class="small">Автор: Сидоров • Формат: PDF</div>
+        </li>
+        <li>
+          <a href="https://example.com/docs/history10.docx" target="_blank" rel="noopener">История России, 10 класс</a>
+          <div class="small">Автор: Смирнова • Формат: DOCX</div>
+        </li>
+        <li>
+          <a href="https://example.com/docs/biology11.pdf" target="_blank" rel="noopener">Биология, 11 класс — Ботаника</a>
+          <div class="small">Авторы: Орлова • Формат: PDF</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" aria-label="Задания к параграфам">
+      <h2>Задания</h2>
+      <details>
+        <summary><strong>Алгебра 10 — Параграф 1: Числовые последовательности</strong></summary>
+        <ol>
+          <li>Дайте определение арифметической прогрессии и приведите пример.</li>
+          <li>Найдите 10-й член прогрессии: a1 = 3, d = 5.</li>
+          <li>Решите: найдите сумму первых n членов прогрессии при n = 20.</li>
+        </ol>
+      </details>
+      <details>
+        <summary><strong>Геометрия 10 — Параграф 2: Векторы</strong></summary>
+        <ol>
+          <li>Определите длину вектора →AB с координатами (3, 4).</li>
+          <li>Какие векторы называются коллинеарными? Приведите пример.</li>
+          <li>Найдите угол между векторами (1, 0) и (1, 1).</li>
+        </ol>
+      </details>
+      <details>
+        <summary><strong>История 10 — Глава 1: Реформы</strong></summary>
+        <ol>
+          <li>Назовите причины реформы и её ключевые итоги.</li>
+          <li>Подготовьте краткую презентацию (3–4 слайда) по теме.</li>
+          <li>Ответьте письменно: чем реформа повлияла на экономику?</li>
+        </ol>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="container footer small">
+    <div class="row" style="justify-content: space-between;">
+      <span>© 2025 «Сайт для слабовидящих»</span>
+      <span class="mono">/uchebniki/uchebniki.html</span>
+    </div>
+  </footer>
+
+  <!-- ВАЖНО: относительные пути к JS для Pages -->
+  <script src="../assets/accessibility.js" defer></script>
+  <script src="../assets/uchebniki.js" defer></script>
+</body>
+</html>
