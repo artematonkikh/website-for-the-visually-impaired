@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Адаптированные учебники для слабовидящих: поиск, озвучка и задания по параграфам. Поддержка крупного текста, контраста и сохранения личных настроек.">
+  <title>О проекте — Сайт для слабовидящих</title>
+
+  <!-- ВАЖНО: относительный путь к css для Pages -->
+  <link rel="stylesheet" href="../assets/styles.css" />
+
+  <!-- шрифты можно оставлять как есть (внешние абсолютные ссылки) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <header class="header" role="banner">
+    <div class="container row" style="justify-content: space-between;">
+      <div class="row" aria-label="Навигация">
+        <span class="brand">Сайт для слабовидящих</span>
+        <nav aria-label="Основная навигация" class="row">
+          <!-- ВАЖНО: относительные ссылки -->
+          <a class="btn secondary" href="../main/main.html">Главная</a>
+          <a class="btn secondary" aria-current="page" href="../uchebniki/uchebniki.html">Учебники</a>
+        </nav>
+      </div>
+      <div class="controls" aria-label="Контролы доступности">
+        <button id="fs-minus" class="secondary" aria-label="Уменьшить шрифт">A−</button>
+        <button id="fs-plus" class>А+</button>
+        <button id="fs-reset" class="secondary" aria-label="Сбросить настройки">Сброс</button>
+        <button id="lh-minus" class="secondary" aria-label="Меньше интерлиньяж">↓lh</button>
+        <button id="lh-plus" class="secondary" aria-label="Больше интерлиньяж">↑lh</button>
+        <button id="ls-minus" class="secondary" aria-label="Меньше межбуквенный">↓ls</button>
+        <button id="ls-plus" class="secondary" aria-label="Больше межбуквенный">↑ls</button>
+        <button id="theme-light" class="secondary">Светлая</button>
+        <button id="theme-dark" class="secondary">Тёмная</button>
+        <button id="theme-hc" class="secondary">Контраст</button>
+        <button id="font-inter" class="secondary">Inter</button>
+        <button id="font-noto" class="secondary">Noto Serif</button>
+        <button id="tts" class>🔊 Озвучить</button>
+        <button id="tts-stop" class="secondary">⏹︎</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="container" tabindex="-1">
+    <section class="card" data-tts-target aria-labelledby="about-title">
+      <h1 id="about-title">О проекте</h1>
+
+      <p>
+        Этот сайт создан для слабовидящих школьников, чтобы сделать обучение доступным и удобным.
+        Он решает основные проблемы: малоконтрастные страницы, мелкий шрифт, отсутствие озвучки
+        и сложную навигацию.
+      </p>
+
+      <p>
+        Портал поддерживает крупный текст, голосовое управление, адаптивный дизайн и озвучку контента.
+      </p>
+
+      <h2>Структура разделов</h2>
+      <ul class="list">
+        <li><strong>Главная</strong> — информация о разработчиках, проекте и настройках доступности.</li>
+        <li><strong>Учебники</strong> — адаптированные материалы, поиск, озвучка и интерактивные задания по параграфам.</li>
+      </ul>
+
+      <h2>Изюминка проекта</h2>
+      <ul class="list">
+        <li>Адаптивные задания к параграфам;</li>
+        <li>Голосовой поиск;</li>
+        <li>Сохранение личных настроек;</li>
+        <li>Режим презентации для уроков (можно использовать сайт прямо на занятиях).</li>
+      </ul>
+    </section>
+
+    <section class="grid" aria-label="Команда проекта">
+      <article class="card">
+        <h2>Разработчики</h2>
+        <ul class="list">
+          <li><strong>10–"В" класс</strong>: Тонких Артём и Грипасов Константин</li>
+          <li><strong>Школа</strong>: ГБОУ № 1539</li>
+          <li>Роли: фронтенд, контент, тестирование доступности</li>
+          <li>Инструменты: HTML, CSS, JS, Web Speech API</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Кураторы</h2>
+        <p class="small">ФИО кураторов, контакты, задачи.</p>
+      </article>
+      <article class="card">
+        <h2>Как пользоваться</h2>
+        <ol>
+          <li>Настройте шрифт/контраст вверху страницы.</li>
+          <li>Перейдите в «Учебники», найдите нужный предмет.</li>
+          <li>Откройте документ и выполните задания ниже.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>План развития</h2>
+      <ul class="list">
+        <li>🔹 Импорт реальных учебников (PDF/Google Docs).</li>
+        <li>🔹 Проверка ответов на задания автоматически.</li>
+        <li>🔹 Голосовой ввод ответов (эксперимент).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container footer small">
+    <div class="row" style="justify-content: space-between;">
+      <span>© 2025 «Сайт для слабовидящих»</span>
+      <span class="mono">/main/main.html</span>
+    </div>
+  </footer>
+
+  <!-- ВАЖНО: относительный путь к js -->
+  <script src="../assets/accessibility.js" defer></script>
+</body>
+</html>
