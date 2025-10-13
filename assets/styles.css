@@ -1,0 +1,179 @@
+:root {
+  /* Базовая типографика */
+  --fs: 18px;             /* базовый размер шрифта */
+  --lh: 1.6;              /* межстрочный интервал */
+  --ls: 0;                /* межбуквенный интервал */
+
+  /* Светлая тема */
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #585b63;
+  --brand: #1a73e8;       /* фирменный синий */
+  --on-brand: #ffffff;    /* текст на брендовом фоне */
+  --panel-bg: #f3f4f6;    /* фон панели с контролами */
+  --focus: #ffb300;       /* цвет фокуса */
+
+  /* Карточки/элементы */
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+/* Тёмная тема */
+[data-theme="dark"] {
+  --bg: #0f1216;
+  --text: #f3f4f6;
+  --muted: #b9bec7;
+  --panel-bg: #151922;
+  --brand: #6aa6ff;
+  --on-brand: #0b0d11;
+  --focus: #ffd166;
+}
+
+/* Высокая контрастность */
+[data-theme="hc"] {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #e0e0e0;
+  --panel-bg: #000000;
+  --brand: #ffef00; /* жёлтый */
+  --on-brand: #000000;
+  --focus: #00ffff; /* циан */
+}
+
+/* БАЗОВЫЙ стек по умолчанию — Inter (без засечек) */
+:root {
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Кнопка "Inter" переключит на без-засечный */
+[data-font="inter"] {
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Кнопка "Noto Serif" переключит на с засечками */
+[data-font="noto-serif"] {
+  --font: "Noto Serif", Georgia, "Times New Roman", Times, serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--fs);
+  line-height: var(--lh);
+  letter-spacing: var(--ls);
+}
+
+/* Доступность */
+:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: .4rem .6rem;
+  background: var(--brand);
+  color: var(--on-brand);
+  border-radius: 8px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+}
+
+button, .btn {
+  appearance: none;
+  border: 2px solid transparent;
+  background: var(--brand);
+  color: var(--on-brand);
+  padding: .5rem .75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+}
+button.secondary, .btn.secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+.card {
+  background: var(--panel-bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+input[type="search"], input[type="text"], select {
+  width: 100%;
+  padding: .6rem .8rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--muted);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list li { padding: .5rem 0; }
+.list a { color: var(--brand); font-weight: 600; text-decoration: none; }
+.list a:focus, .list a:hover { text-decoration: underline; }
+
+.small { color: var(--muted); font-size: .95em; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.center { text-align: center; }
+
+.footer { margin-top: 2rem; padding: 1rem 0; color: var(--muted); }
